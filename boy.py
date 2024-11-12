@@ -1,7 +1,7 @@
 # 이것은 각 상태들을 객체로 구현한 것임.
 
 from pico2d import get_time, load_image, SDL_KEYDOWN, SDL_KEYUP, SDLK_SPACE, SDLK_LEFT, SDLK_RIGHT, load_font, \
-    draw_rectangle
+    draw_rectangle, close_canvas
 
 from ball import Ball
 import game_world
@@ -163,6 +163,7 @@ class Boy:
         if group == 'boy:zombie':
             self.is_removed = True
             game_world.remove_object(self)
+            game_framework.quit()
         if group == 'boy:ball':
             self.ball_count += 1
         pass
